@@ -4,14 +4,13 @@ process.env.AWS_REGION = "ap-south-1"
 const AWS = require('aws-sdk');
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require("child_process"); // import { exec } from "child_process"
+const { execSync } = require("child_process");
 const s3 = new AWS.S3();
 const uuid = require("uuid")
 
 
-
 async function getFileInfo(originalFileName) {
-
+console.log(AWS.config)
  const params = {
   Bucket: 'test-media-hemant',
   Key: originalFileName,
